@@ -22,7 +22,7 @@ while (true) {
   let edad = parseInt(edadString);
   let carnetDeConducir = prompt("¿Tienes carnet de conducir? Responde con 'si' o 'no'");
   let salir = prompt("Para salir escribe fin, sino pulsa enter para ingresar más datos");
-
+  
   if (isNaN(edad) || isNaN(parseInt(edad)) || edad.toString() !== edadString || edadString.trim() === "" || (carnetDeConducir.toLowerCase() !== 'si' && carnetDeConducir.toLowerCase() !== 'no')) {
     console.log(nombre + " Ingresa un dato valido (edad numérica y 'si' o 'no' para el carnet de conducir)");
     if (salir.toLowerCase() === 'fin') {
