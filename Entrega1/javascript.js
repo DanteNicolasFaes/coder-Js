@@ -12,6 +12,12 @@ while (true) {
     break;
   }
 
+  
+  if (nombre.trim() === "") {
+    console.log("Por favor, ingresa un nombre válido.");
+    continue;
+  }
+
   let edadString = prompt("Ingresa tu edad");
   let edad = parseInt(edadString);
   let carnetDeConducir = prompt("¿Tienes carnet de conducir? Responde con 'si' o 'no'");
@@ -21,8 +27,11 @@ while (true) {
     console.log(nombre + " Ingresa un dato valido (edad numérica y 'si' o 'no' para el carnet de conducir)");
     if (salir.toLowerCase() === 'fin') {
       break;
-    } else { continue }
+    } else {
+      continue;
+    }
   }
+
   if (puedeConducir(edad, carnetDeConducir)) {
     puedeConducirArray.push({ nombre, puedeConducir: true });
     console.log(`${nombre} puede conducir`);
@@ -31,11 +40,16 @@ while (true) {
     console.log(`${nombre} no puede conducir`);
   }
 
+  if (salir.toLowerCase() === 'fin') {
+    break;
+  }
 }
+
 console.log("Personas que pueden conducir:");
 for (let persona of puedeConducirArray) {
   console.log(`${persona.nombre} puede conducir`);
 }
+
 console.log("Personas que no pueden conducir:");
 for (let persona of noPuedeConducirArray) {
   console.log(`${persona.nombre} no puede conducir`);
